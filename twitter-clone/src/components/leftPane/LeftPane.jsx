@@ -1,5 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { IconContext } from 'react-icons';
+import { BsTwitter, BsBookmarks } from 'react-icons/bs';
+import { RiHome7Line, RiFileList3Line } from 'react-icons/ri';
+import { FiSearch, FiMail } from 'react-icons/fi';
+import { GrNotification } from 'react-icons/gr';
+import { MdOutlinePersonOutline } from 'react-icons/md';
+import { CgMoreO } from 'react-icons/cg';
 
 import './LeftPane.scss';
 
@@ -7,16 +14,56 @@ const LeftPane = () => {
   return (
     <div className='left-pane'>
       <div className='container'>
-        <header>Twitter Icon</header>
-        <nav>
-          <NavLink to='/'>Home</NavLink>
-          <NavLink to='/explore'>Explore</NavLink>
-          <NavLink to='/notifications'>Notifications</NavLink>
-          <NavLink to='/messages'>Messages</NavLink>
-          <NavLink to='/bookmarks'>Bookmarks</NavLink>
-          <NavLink to='/lists'>Lists</NavLink>
-          <NavLink to='/profile'>Profile</NavLink>
-        </nav>
+        <IconContext.Provider value={{ size: '2em' }}>
+          <header>
+            <NavLink to='/'>
+              <BsTwitter />
+            </NavLink>
+          </header>
+          <nav>
+            <NavLink to='/' exact activeClassName='selected'>
+              <span>
+                <RiHome7Line /> Home
+              </span>
+            </NavLink>
+            <NavLink to='/explore' activeClassName='selected'>
+              <span>
+                <FiSearch /> Explore
+              </span>
+            </NavLink>
+            <NavLink to='/notifications' activeClassName='selected'>
+              <span>
+                <GrNotification className='react-icon' /> Notifications
+              </span>
+            </NavLink>
+            <NavLink to='/messages' activeClassName='selected'>
+              <span>
+                <FiMail /> Messages
+              </span>
+            </NavLink>
+            <NavLink to='/bookmarks' activeClassName='selected'>
+              <span>
+                <BsBookmarks /> Bookmarks
+              </span>
+            </NavLink>
+            <NavLink to='/lists' activeClassName='selected'>
+              <span>
+                <RiFileList3Line /> Lists
+              </span>
+            </NavLink>
+            <NavLink to='/profile' activeClassName='selected'>
+              <span>
+                <MdOutlinePersonOutline /> Profile
+              </span>
+            </NavLink>
+            <button className='more'>
+              <span>
+                <CgMoreO /> More
+              </span>
+            </button>
+          </nav>
+        </IconContext.Provider>
+
         <button className='tweet'>Tweet</button>
         <footer>
           <button className='account'>
