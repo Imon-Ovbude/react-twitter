@@ -4,14 +4,20 @@
   box-sizing: border-box;
 }
 
-.app {
-  font-family: 'Segoe UI', 'Times New Roman', Times, serif;
-  display: grid;
-  grid-template-columns: 1.1fr 2.8fr 1.4fr;
-  background-color: #171717;
-  color: #fff;
-}
-
-.right-pane {
+.container {
   background-color: #15202b;
+
+  .app {
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', 'Times New Roman', Times, serif;
+    display: grid;
+    grid-template-columns: 1.1fr 2.8fr 1.4fr;
+    background-color: #171717;
+    color: #fff;
+  }
+
+  .right-pane {
+    background-color: #15202b;
+  }
 }

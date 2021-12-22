@@ -3,24 +3,27 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './App.scss';
 import { LeftPane } from './components';
+import Home from './components/middlePane/home/Home';
 
 const App = () => {
   return (
     <Router>
-      <div className='app'>
-        <LeftPane />
-        <Switch>
-          <Route path='/' exact>
-            Home
-          </Route>
-          <Route path='/explore'>Explore</Route>
-          <Route path='/notifications'>Notifications</Route>
-          <Route path='/messages'>Messages</Route>
-          <Route path='/bookmarks'>Bookmarks</Route>
-          <Route path='/lists'>Lists</Route>
-          <Route path='/profile'>Profile</Route>
-        </Switch>
-        <div className='right-pane'>Right Pane</div>
+      <div className='container'>
+        <div className='app'>
+          <LeftPane />
+          <Switch>
+            <Route path='/' exact>
+              <Home />
+            </Route>
+            <Route path='/explore'>Explore</Route>
+            <Route path='/notifications'>Notifications</Route>
+            <Route path='/messages'>Messages</Route>
+            <Route path='/bookmarks'>Bookmarks</Route>
+            <Route path='/lists'>Lists</Route>
+            <Route path='/profile'>Profile</Route>
+          </Switch>
+          <div className='right-pane'>Right Pane</div>
+        </div>
       </div>
     </Router>
   );

@@ -9,7 +9,7 @@ import { MdOutlinePersonOutline } from 'react-icons/md';
 import { CgMoreO } from 'react-icons/cg';
 
 import './LeftPane.scss';
-import UserImage from '../UserImage';
+import UserImage from '../userThumbnail/UserThumbnail';
 
 const LeftPane = () => {
   return (
@@ -69,10 +69,6 @@ const LeftPane = () => {
         <footer>
           <button className='account'>
             <div className='photo'>
-              {/* <img
-                alt='imon ovbude'
-                src='https://pbs.twimg.com/profile_images/1470935411853647873/LA783532_normal.png'
-              /> */}
               <UserImage />
             </div>
             <div>
